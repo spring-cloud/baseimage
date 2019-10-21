@@ -13,6 +13,6 @@ ENV PATH $JAVA_HOME/bin:$PATH
 COPY wait-for-it.sh /wait-for-it.sh
 RUN chmod +x /wait-for-it.sh
 
-RUN mkdir -p /opt/openjdk \
- && cd /opt/openjdk \
- && curl https://java-buildpack.cloudfoundry.org/openjdk/bionic/x86_64/openjdk-1.8.0_192.tar.gz | tar xz
+WORKDIR /opt/openjdk
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+RUN curl https://java-buildpack.cloudfoundry.org/openjdk/bionic/x86_64/openjdk-1.8.0_192.tar.gz | tar xz
