@@ -5,6 +5,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
     curl \
     netcat \
     wget \
+    fontconfig \
  && rm -rf /var/lib/apt/lists/*
 
 ENV JAVA_HOME /opt/openjdk
