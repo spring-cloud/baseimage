@@ -27,6 +27,8 @@ ENV PATH $JAVA_HOME/bin:$PATH
 COPY wait-for-it.sh /wait-for-it.sh
 RUN chmod +x /wait-for-it.sh
 
+RUN apt-get update && apt-get install --no-install-recommends -y wget
+
 COPY --from=retrieve download.tar.gz /tmp/download.tar.gz
 
 RUN mkdir -p /usr/lib/jvm \
