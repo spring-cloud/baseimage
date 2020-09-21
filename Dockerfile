@@ -31,6 +31,8 @@ RUN apt-get update && apt-get install --no-install-recommends -y wget
 
 COPY --from=retrieve download.tar.gz /tmp/download.tar.gz
 
+LABEL jdk-version=11.0.8_10
+
 RUN mkdir -p /usr/lib/jvm \
  && tar xzf /tmp/download.tar.gz -C /usr/lib/jvm \
  && ln -s /usr/lib/jvm/* /usr/lib/jvm/jre \
