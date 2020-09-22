@@ -1,14 +1,20 @@
-# Base Image
+# springcloud/baseimage
 
-A base image used for building images of executable components:  
-  * Spring Cloud Data Flow
-  * Spring Cloud Skipper
-  * Stream Applications
-  * Task Applications
+Base Docker image for Spring Cloud Data Flow, Spring Cloud Skipper, Stream Applications and Tasks.
 
-Includes Java 11+, and some common utilities
+#### 1. Build the image
 
-#### Retrieve the JDK version
+```
+docker build -t springcloud/baseimage:<tag-version> . 
+``` 
+
+publish the image to DockerHub: 
+```
+docker push springcloud/baseimage:<tag-version> 
+``` 
+
+
+#### 2. Check the bundled JDK version
 
 You can check the Java version bundled with a particular image tag, like this:
 
