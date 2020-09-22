@@ -1,8 +1,20 @@
-# openjdk-docker
+# springcloud/baseimage
 
-OpenJDK Docker image
+Base Docker image for Spring Cloud Data Flow, Spring Cloud Skipper, Stream Applications and Tasks.
 
-#### Retrieve the JDK version
+#### 1. Build the image
+
+```
+docker build -t springcloud/baseimage:<tag-version> . 
+``` 
+
+publish the image to DockerHub: 
+```
+docker push springcloud/baseimage:<tag-version> 
+``` 
+
+
+#### 2. Check the bundled JDK version
 
 You can check the Java version bundled with a particular image tag, like this:
 
