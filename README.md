@@ -25,5 +25,5 @@ docker run -it --rm springcloud/baseimage:<image-tag> java -version
 or by retrieving the `jdk-version` image label:
 
 ```
-docker inspect springcloud/openjdk:<image-tag> | grep jdk-version
+docker inspect springcloud/baseimage:<image-tag> | grep jdk-version
 ```
