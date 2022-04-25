@@ -1,5 +1,5 @@
-ARG DOWNLOAD_URI=https://github.com/bell-sw/Liberica/releases/download/11.0.8+10/bellsoft-jre11.0.8+10-linux-amd64.tar.gz
-ARG SHA256=b4cb31162ff6d7926dd09e21551fa745fa3ae1758c25148b48dadcf78ab0c24c
+ARG DOWNLOAD_URI=https://github.com/bell-sw/Liberica/releases/download/11.0.15+10/bellsoft-jre11.0.15+10-linux-amd64.tar.gz
+ARG SHA1=a0cae6e964f67497840344c64614f13e530c43c8
 
 # Download and verify file
 # Args: $DOWNLOAD_URI, $SHA256
@@ -15,8 +15,8 @@ RUN curl -L \
     $DOWNLOAD_URI \
     > download.tar.gz
 
-ARG SHA256
-RUN echo "${SHA256} download.tar.gz" | sha256sum -c - 2>&1
+ARG SHA1
+RUN echo "${SHA1} download.tar.gz" | sha1sum -c - 2>&1
 
 # Install File
 FROM ubuntu:bionic
@@ -31,7 +31,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y wget
 
 COPY --from=retrieve download.tar.gz /tmp/download.tar.gz
 
-LABEL jdk-version=11.0.8_10
+LABEL jdk.version=11.0.15-10
 
 RUN mkdir -p /usr/lib/jvm \
  && tar xzf /tmp/download.tar.gz -C /usr/lib/jvm \
