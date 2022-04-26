@@ -1,0 +1,21 @@
+name: 'Build And Publish Image'
+description: 'Builds and publishes image'
+inputs:
+  version:
+    description: 'image tag'
+    required: true
+  dockerhub-username:
+    description: 'dockerhub username'
+    required: true
+  dockerhub-password:
+    description: 'dockerhub password'
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - name: Build and Push image
+      uses: docker/build-push-action@v2
+      with:
+        context: .
+        push: true
+        tags: springcloud/baseimage:${{ inputs.version }}
