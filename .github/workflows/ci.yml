@@ -1,0 +1,24 @@
+name: CI
+
+on:
+  workflow_dispatch:
+  push:
+    paths-ignore:
+      - '.github/**'
+
+jobs:
+  build:
+    if: github.repository_owner == 'spring-cloud'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Determine version
+        run: |
+          echo baseimage_version=$(cat version.txt) >> $GITHUB_ENV
+      - name: Build and Publish Images
+        uses: ./.github/actions/build-images
+        with:
+          version: ${{ env.baseimage_version }}
+          dockerhub-username: ${{ secrets.DOCKERHUB_USERNAME }}
+          dockerhub-password: ${{ secrets.DOCKERHUB_TOKEN }}

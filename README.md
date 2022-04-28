@@ -22,8 +22,8 @@ You can check the Java version bundled with a particular image tag, like this:
 docker run -it --rm springcloud/baseimage:<image-tag> java -version
 ```
 
-or by retrieving the `jdk-version` image label:
+or by retrieving the `jdk.version` image label:
 
 ```
-docker inspect springcloud/baseimage:<image-tag> | grep jdk-version
+docker inspect springcloud/baseimage:<image-tag> | grep jdk.version
 ```
