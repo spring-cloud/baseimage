@@ -17,7 +17,7 @@ jobs:
         run: |
           echo baseimage_version=$(cat version.txt) >> $GITHUB_ENV
       - name: Build and Publish Images
-        uses: ./.github/actions/build-images
+        uses: ./.github/actions/build-image
         with:
           version: ${{ env.baseimage_version }}
           dockerhub-username: ${{ secrets.DOCKERHUB_USERNAME }}
