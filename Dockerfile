@@ -1,5 +1,5 @@
-ARG DOWNLOAD_URI=https://github.com/bell-sw/Liberica/releases/download/11.0.15+10/bellsoft-jre11.0.15+10-linux-amd64.tar.gz
-ARG SHA1=a0cae6e964f67497840344c64614f13e530c43c8
+ARG DOWNLOAD_URI=https://github.com/bell-sw/Liberica/releases/download/11.0.15.1%2B2/bellsoft-jre11.0.15.1+2-linux-amd64.tar.gz
+ARG SHA1=810a72da507135423d67a7df4785f0c3f6e01f7a
 
 # Download and verify file
 # Args: $DOWNLOAD_URI, $SHA256
