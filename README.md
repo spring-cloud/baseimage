@@ -13,7 +13,6 @@ publish the image to DockerHub:
 docker push springcloud/baseimage:<tag-version> 
 ``` 
 
-
 #### 2. Check the bundled JDK version
 
 You can check the Java version bundled with a particular image tag, like this:
