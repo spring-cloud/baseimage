@@ -1,5 +1,5 @@
-ARG DOWNLOAD_URI=https://github.com/bell-sw/Liberica/releases/download/11.0.15.1%2B2/bellsoft-jre11.0.15.1+2-linux-amd64.tar.gz
-ARG SHA1=810a72da507135423d67a7df4785f0c3f6e01f7a
+ARG DOWNLOAD_URI=https://github.com/bell-sw/Liberica/releases/download/11.0.16%2B8/bellsoft-jre11.0.16+8-linux-amd64.tar.gz
+ARG SHA1=513be23b20f4f7b1f60d9254dfb0fa59a7558ad0
 
 # Download and verify file
 # Args: $DOWNLOAD_URI, $SHA256
@@ -31,7 +31,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y wget
 
 COPY --from=retrieve download.tar.gz /tmp/download.tar.gz
 
-LABEL jdk.version=11.0.15-10
+LABEL jdk.version=11.0.16-8
 
 RUN mkdir -p /usr/lib/jvm \
  && tar xzf /tmp/download.tar.gz -C /usr/lib/jvm \
